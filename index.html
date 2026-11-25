@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proycto Final | Mi portafolio</title>
+  <title>Oscar Alberto | Portafolio profesional</title>
   <!-- Marca la página con la clase "js" si el JavaScript funciona -->
   <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
+    /* Colores del modo OSCURO */
     :root {
       --fondo: #0a0a2a; --panel: #000000; --borde: #ffffff; --texto: #ffffff;
       --alma: #ff0000; --kris: #4fa3ff; --susie: #c04dff; --ralsei: #5de08a;
@@ -28,7 +29,7 @@
     body { margin: 0; background: var(--fondo); color: var(--texto);
       font-family: "Press Start 2P", monospace; font-size: .75rem; line-height: 2; }
 
-   /* Dos capas de fondo, una encima de la otra. */
+   /* Dos capas de fondo, una encima de la otra. Al cambiar de modo, la clara se desvanece. */
 body::before, body::after {
   content: ""; position: fixed; inset: 0; z-index: -1;
   background-position: center; background-size: cover; background-repeat: no-repeat;
@@ -121,33 +122,32 @@ body.claro::after { opacity: 1; }
       #titulo::after { animation: none; }
       .js .revelar { opacity: 1; transform: none; transition: none; }
     }
+#musicaBtn { display: block; margin: .5rem auto 0; }
   </style>
 </head>
 
 <body>
-  <!-- Aplica el modo guardado ANTES de mostrar la página, para que no parpadee -->
   <script>try { if (localStorage.getItem("tema") === "claro") document.body.classList.add("claro"); } catch (e) {}</script>
-
   <div id="alma"></div>
 <audio id="musica" src="Musica.mp3" loop preload="auto"></audio>
 
   <header>
     <div class="contenedor">
-      <!-- Foto de perfil: sube fotoperfil.jpg (cuadrada, menos de 300 KB). width/height evitan saltos al cargar -->
-      <img class="foto" src="fotoperfil.jpg" alt="Foto de perfil" width="160" height="160">
+     <img class="foto" src="fotoperfil.jpg" alt="Foto de perfil" width="160" height="160">
+<header id="inicio">
       <h1 id="titulo">PAGINA PROFESIONAL</h1>
       <p>Portafolio profesional del desarrollador</p>
       <nav>
         <button type="button" id="menuBtn" aria-expanded="false" aria-controls="menu">☰ Menú</button>
         <ul id="menu">
           <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#glosario">Glosario</a></li>
-          <li><a href="#viaje">Cronología</a></li>
+          <li><a href="#Informacion">Informacion</a></li>
+          <li><a href="#Certificacion">Certificacion</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
       <button type="button" id="tema">Fondo claro</button>
+<button type="button" id="musicaBtn">Música: apagada</button>
     </div>
   </header>
 
@@ -158,11 +158,11 @@ body.claro::after { opacity: 1; }
       <!-- CAMBIA tu nombre y tu correo -->
       <p><span class="etiqueta">Nombre:</span> Oscar Alberto Morales Graciano</p>
       <p><span class="etiqueta">Correo:</span> <a href="mailto:sayayin0724@gmail.com">sayayin0724@gmail.com</a></p>
-	<p> Actualmente estoy estudiando mi septimo semestre de la carrera de Ingenieria en Sistemas Electronicos Inteligentes, estoy en la <a href="https://www.uacj.mx/" target="_blank" rel="noopener">UACJ (Universidad Autonoma de Ciudad Juarez) </a> y estoy en el campus de <a href="https://www.uacj.mx:80/IIT/index.html" target="_blank" rel="noopener">IIT (Instituto de Ingenieria y Tecnologia) </a>, me especializo en la produccion y eficiencia de sistemas electronicos inteligentes, en los cuales seria mejorar la eficiencia de ellos al igual que la calidad.
+	<p> Actualmente estoy estudiando mi septimo semestre de la carrera de Ingenieria en Sistemas Electronicos Inteligentes, estoy en la <a href="https://www.uacj.mx/" target="_blank" rel="noopener">UACJ (Universidad Autonoma de Ciudad Juarez) </a> y estoy en el campus de <a href="https://www.uacj.mx:80/IIT/index.html" target="_blank" rel="noopener">IIT (Instituto de Ingenieria y Tecnologia) </a>, me especializo en la produccion y eficiencia de sistemas electronicos inteligentes, en los cuales seria mejorar la eficiencia de ellos al igual que la produccion/calidad.
     </details>
 
-    <details id="proyectos" class="caja revelar" open>
-      <summary><h2>Proyectos</h2></summary>
+    <details id="Informacion" class="caja revelar" open>
+      <summary><h2>Informacion</h2></summary>
       <div class="galeria">
         <article class="tarjeta">
           <h3>Mi portafolio</h3>
@@ -170,36 +170,26 @@ body.claro::after { opacity: 1; }
           <a href="https://github.com/memerrales" target="_blank" rel="noopener">Ver en GitHub</a>
         </article>
         <article class="tarjeta">
-          <h3>Fondos del sitio</h3>
-          <p>Imágenes usadas en cada modo.</p>
-          <a href="fondo.jpg">Fondo oscuro</a><br>
-          <a href="fondoblanco.jpg">Fondo claro</a>
-        </article>
+          <h3>Graduado en Bachilleres 11 y en Sec Tec Nm.80</h3>
+          <p>En ambas certificado como tecnico.</p>
+         </article>
         <article class="tarjeta">
-          <h3>Próximo proyecto</h3>
-          <p>Aquí irá mi siguiente trabajo del curso.</p>
+          <h3>Actualmente estudiando</h3>
+          <p>Por el momento me encuentro estudiando el septimo semestre de la carrera de ingenieria anteriormente mencionado en la UACJ.</p>
         </article>
       </div>
     </details>
 
-    <details id="glosario" class="caja revelar" open>
-      <summary><h2>Glosario</h2></summary>
+    <details id="Certificacion" class="caja revelar" open>
+      <summary><h2>Certificacion</h2></summary>
       <dl>
-        <dt>Frontend</dt>
-        <dd>HTML, CSS y JavaScript.</dd>
-        <dt>Mundo Oscuro</dt>
-        <dd>El tema visual de esta página.</dd>
+        <dt>Tecnico en computacion</dt>
+        <dd>Por parte de <a href="https://www.facebook.com/IdesacTec91/?locale=es_LA">IDesAC</a> (Instituto / Centro de Desarrollo y Aplicaciones Computacionales, ubicado en Av. Plutarco Elías Calles 401, Colonia Monumental</dd>
+        <dt>Acreditacion</dt>
+        <dd>Tengo acreditación de la capacitación para el trabajo en Tecnologías de la Información y la Comunicación (TIC).</dd>
       </dl>
     </details>
 
-    <details id="viaje" class="caja revelar" open>
-      <summary><h2>Cronología</h2></summary>
-      <ol>
-        <li>Estructura con HTML.</li>
-        <li>Diseño con CSS.</li>
-        <li>Interactividad con JavaScript.</li>
-      </ol>
-    </details>
 
     <details id="contacto" class="caja revelar" open>
       <summary><h2>Contacto</h2></summary>
@@ -225,12 +215,11 @@ body.claro::after { opacity: 1; }
   </main>
 
   <footer>
-    <p></p>
+    <p><a href="#inicio">↑ Volver al inicio</a></p>
     <p></p>
   </footer>
 
   <script>
-    // 1) Título que se escribe letra por letra
     const titulo = document.getElementById("titulo");
     const textoCompleto = titulo.textContent.trim();
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -243,14 +232,11 @@ body.claro::after { opacity: 1; }
       }, 150);
     }
 
-    // 2) Corazón que sigue al mouse
     const alma = document.getElementById("alma");
     document.addEventListener("mousemove", function (e) {
       alma.style.left = e.clientX + "px";
       alma.style.top = e.clientY + "px";
     });
-
-    // 3) Las cajas suben al aparecer en pantalla
     const observador = new IntersectionObserver(function (entradas) {
       entradas.forEach(function (entrada) {
         if (entrada.isIntersecting) {
@@ -269,12 +255,10 @@ body.claro::after { opacity: 1; }
     }
     actualizarBoton();
     btnTema.addEventListener("click", function () {
-      document.body.classList.toggle("claro"); // agrega o quita la clase "claro" del <body>
+      document.body.classList.toggle("claro");
       try { localStorage.setItem("tema", document.body.classList.contains("claro") ? "claro" : "oscuro"); } catch (e) {}
       actualizarBoton();
     });
-
-    // 5) Menú hamburguesa (celular): se despliega y se colapsa al tocar
     const menuBtn = document.getElementById("menuBtn");
     const menu = document.getElementById("menu");
     menuBtn.addEventListener("click", function () {
@@ -287,8 +271,6 @@ body.claro::after { opacity: 1; }
         menuBtn.setAttribute("aria-expanded", "false");
       }
     });
-
-    // 6) Validación del formulario (sin recargar la página)
     const form = document.getElementById("formContacto");
     function mostrarError(id, texto) { document.getElementById("err-" + id).textContent = texto; }
     form.addEventListener("submit", function (e) {
@@ -307,6 +289,39 @@ body.claro::after { opacity: 1; }
       if (!nombre || !mensaje || !formatoCorreo.test(correo)) valido = false;
       if (!valido) e.preventDefault(); // si hay errores, NO se envía
     });
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("musicaBtn");
+musica.volume = 0.4;                // volumen de 0 a 1
+let pausadaPorUsuario = false;      // si la apagaste, no se enciende sola otra vez
+
+function actualizarMusica() {
+  btnMusica.textContent = musica.paused ? "Música: apagada" : "Música: encendida";
+}
+function iniciarMusica() {
+  if (pausadaPorUsuario) return;
+  musica.play().catch(function () {});
+}
+
+iniciarMusica(); 
+
+
+function alPrimerToque(e) {
+  if (e.target.closest && e.target.closest("#musicaBtn")) return;
+  iniciarMusica();
+  document.removeEventListener("click", alPrimerToque);
+  document.removeEventListener("keydown", alPrimerToque);
+}
+document.addEventListener("click", alPrimerToque);
+document.addEventListener("keydown", alPrimerToque);
+
+
+btnMusica.addEventListener("click", function () {
+  if (musica.paused) { pausadaPorUsuario = false; musica.play().catch(function () {}); }
+  else { pausadaPorUsuario = true; musica.pause(); }
+});
+musica.addEventListener("play", actualizarMusica);
+musica.addEventListener("pause", actualizarMusica);
+actualizarMusica();
   </script>
 </body>
 </html>
