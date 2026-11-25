@@ -11,14 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
-    /* Colores del modo OSCURO (el predeterminado) */
+    /* Colores del modo OSCURO */
     :root {
       --fondo: #0a0a2a; --panel: #000000; --borde: #ffffff; --texto: #ffffff;
       --alma: #ff0000; --kris: #4fa3ff; --susie: #c04dff; --ralsei: #5de08a;
       --velo: rgba(10,10,42,.6); /* capa semitransparente sobre la imagen de fondo */
       --corazon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='24' viewBox='0 0 9 8' shape-rendering='crispEdges'%3E%3Cpath fill='%23ff0000' d='M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z'/%3E%3C/svg%3E");
     }
-    /* Modo CLARO: el JavaScript agrega la clase "claro" al <body> y estas variables reemplazan a las de arriba */
+    /* Modo CLARO */
     body.claro {
       --fondo: #ffffff; --panel: #f3f0ff; --borde: #1a1a3a; --texto: #14143a;
       --alma: #d40000; --kris: #1f5fbf; --susie: #7b1fcf; --ralsei: #14803f;
@@ -35,11 +35,11 @@ body::before, body::after {
   background-position: center; background-size: cover; background-repeat: no-repeat;
   transition: opacity .6s ease;
 }
-body::before { /* capa oscura (siempre debajo) */
+body::before {
   background-image: linear-gradient(rgba(10,10,42,.6), rgba(10,10,42,.6)), url("fondo.jpg");
   image-rendering: pixelated;
 }
-body::after { /* capa clara (invisible hasta activar el modo claro) */
+body::after { 
   background-image: linear-gradient(rgba(255,255,255,.35), rgba(255,255,255,.35)), url("fondoblanco.jpg");
   opacity: 0;
 }
@@ -63,9 +63,9 @@ body.claro::after { opacity: 1; }
     nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; padding: 0; }
     nav a { color: var(--texto); text-decoration: none; }
     nav a:hover::before, nav a:focus::before { content: "♥ "; color: var(--alma); }
-    #menuBtn { display: none; } /* el botón hamburguesa solo se ve en celular */
+    #menuBtn { display: none; }
 
-    /* Cajas colapsables: <details> y <summary> */
+    /* cajas colapsables */
     summary { list-style: none; }
     summary::-webkit-details-marker { display: none; }
     summary::before { content: "[-] "; color: var(--alma); }
@@ -79,7 +79,7 @@ body.claro::after { opacity: 1; }
     dt { margin-top: .8rem; }
     dd { margin-left: 1.2rem; }
 
-    /* Galería de proyectos: CSS Grid, 1 columna en celular */
+    /*proyectos*/
     .galeria { display: grid; grid-template-columns: 1fr; gap: 1rem; }
     .tarjeta { border: 3px solid var(--susie); padding: 1rem; }
     .tarjeta h3 { margin: 0 0 .5rem; font-size: .85rem; }
@@ -97,7 +97,7 @@ body.claro::after { opacity: 1; }
     #tema { display: block; margin: 1rem auto 0; }
     footer { text-align: center; padding: 2rem 0; opacity: .8; }
 
-    /* Animación: las cajas suben suavemente al aparecer */
+    /* Animacion */
     .js .revelar { opacity: 0; transform: translateY(40px);
   transition: opacity .8s ease, transform .8s ease,
               background-color .5s ease, color .5s ease, border-color .5s ease; }
@@ -108,10 +108,10 @@ body.claro::after { opacity: 1; }
     #alma { position: fixed; left: -100px; top: -100px; width: 27px; height: 24px; pointer-events: none;
       z-index: 9999; background: var(--corazon) no-repeat; transform: translate(-50%, -50%); }
 
-    /* MEDIA QUERIES: más columnas en pantallas grandes */
+    /* MEDIA QUERIES */
     @media (min-width: 600px) { .galeria { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 900px) { .galeria { grid-template-columns: repeat(3, 1fr); } }
-    /* Celular: aparece el botón hamburguesa y el menú se esconde hasta tocarlo */
+    /* Celular menu hamburguesa */
     @media (max-width: 599px) {
       #menuBtn { display: inline-block; margin: 0 auto; }
       nav ul { display: none; flex-direction: column; align-items: center; gap: .5rem; }
@@ -130,6 +130,7 @@ body.claro::after { opacity: 1; }
   <script>try { if (localStorage.getItem("tema") === "claro") document.body.classList.add("claro"); } catch (e) {}</script>
 
   <div id="alma"></div>
+<audio id="musica" src="Musica.mp3" loop preload="auto"></audio>
 
   <header>
     <div class="contenedor">
