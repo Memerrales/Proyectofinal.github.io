@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
-    /* Colores del modo OSCURO */
     :root {
       --fondo: #0a0a2a; --panel: #000000; --borde: #ffffff; --texto: #ffffff;
       --alma: #ff0000; --kris: #4fa3ff; --susie: #c04dff; --ralsei: #5de08a;
@@ -29,7 +28,7 @@
     body { margin: 0; background: var(--fondo); color: var(--texto);
       font-family: "Press Start 2P", monospace; font-size: .75rem; line-height: 2; }
 
-   /* Dos capas de fondo, una encima de la otra. Al cambiar de modo, la clara se desvanece. */
+   /* Dos capas de fondo, una encima de la otra. */
 body::before, body::after {
   content: ""; position: fixed; inset: 0; z-index: -1;
   background-position: center; background-size: cover; background-repeat: no-repeat;
